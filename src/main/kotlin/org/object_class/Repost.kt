@@ -1,8 +1,8 @@
 package org.object_class
 
-class Repost (
+class Repost(
    // информаци€ о репостах записи (Ђ–ассказать друзь€мї), объект с пол€ми:
    var count: Int = 0, // Ч число пользователей, скопировавших запись;
-   var user_reposted: Boolean = false // Ч наличие репоста от текущего пользовател€ (1 Ч есть, 0 Ч нет).
+   var userReposted: Boolean = false, // Ч наличие репоста от текущего пользовател€ (1 Ч есть, 0 Ч нет).
 
 )

@@ -1,0 +1,28 @@
+package org.object_class
+
+data class Post(
+    var id: Int = 0,
+    var ownerId: Int = 0,
+    var fromId: Int = 0,
+    var createdBy: Int = 0,
+    var date: Int = 0,
+    var text: String = "empty",
+    var replyOwnerId: Int = 0,
+    var replyPostId: Int = 0,
+    var friendsOnly: Boolean = false,
+    var comments: Comments = Comments(),
+    var copyright: Copyright = Copyright(),
+    var likes: Likes = Likes(),
+    var reposts: Repost = Repost(),
+    var views: Views = Views(),
+    var postType: String = "комментарий",
+    var signerId: Int = 0,
+    var canPin: Boolean = false,
+    var canDelete: Boolean = false,
+    var canEdit: Boolean = false,
+    var isPinned: Boolean = false,
+    var markedAsAds: Boolean = false,
+    var isFavorite: Boolean = false,
+    var donut: Donut = Donut(),
+    var postponedId: Int = 0,
+)
