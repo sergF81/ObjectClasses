@@ -22,12 +22,10 @@ fun main() {
     WallService.add(post)
     WallService.add(origin1)
     WallService.add(origin2)
- //  WallService.update(origin3)
+    WallService.update(origin3)
 
     println("__________________Вывод содержимого постов____________________")
-    println(WallService.toString(post))
-    println(WallService.toString(origin1))
-    println(WallService.toString(origin2))
+    println(WallService.posts.toList())
 
 
 }

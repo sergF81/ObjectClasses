@@ -5,8 +5,6 @@ import org.junit.Test
 
 class WallServiceTest {
 
-
-
     @Test
     fun addNotZero() {
         val post = Post(0)
@@ -14,21 +12,22 @@ class WallServiceTest {
         assertNotEquals(0, WallService.posts.last().id)
     }
 
-
+    @Test
+    fun updateTrue() {
+        WallService.add(Post())
+        WallService.add(Post())
+        val post = Post(id = 1)
+        val result = WallService.update(post)
+        assertTrue(result)
+    }
 
     @Test
-    fun update() {
-
-        val post = Post(ownerId = 4, date = 1621668759, text = "Атас")
-
-        WallService.add(post)
-
-        val post1 = Post(id = 1, ownerId = 2, date = 1621668760, text = "Атас!")
-
-        WallService.update(post1)
-        assertEquals(update(), true)
-       // assertEquals(false, false)
-
+    fun updateFalse() {
+        WallService.add(Post())
+        WallService.add(Post())
+        val post = Post(10)
+        val result = WallService.update(post)
+        assertFalse(result)
     }
 
 }

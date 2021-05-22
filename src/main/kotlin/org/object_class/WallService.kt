@@ -3,15 +3,14 @@ package org.object_class
 //создание синглтона - Объект WallService, который внутри себя хранит посты в массиве
 object WallService {
     var posts = emptyArray<Post>()
-  //  private var nextId: Int = 0
     private var updateId: Int = 0
 
 
     fun add(post: Post): Post {
-            var post  = if(posts.isEmpty() ) post.copy(id = 1)
-                else post.copy(id = posts.last().id + 1)
+        val post = if (posts.isEmpty()) post.copy(id = 1)
+        else post.copy(id = posts.last().id + 1)
         posts += post
-        return  posts.last()
+        return posts.last()
     }
 
     @Override
@@ -23,7 +22,7 @@ object WallService {
         var update: Boolean = false
         updateId = post.id
 
-        var idNew = post.id
+        //  var idNew = post.id
         var ownerIdNew = post.ownerId
         var fromIdNew = post.fromId
         var createdByNew = post.createdBy
@@ -51,11 +50,9 @@ object WallService {
         for (post in posts) {
 
             if (post.id == updateId) {
-                post.id = idNew
-                // post.owner_id = owner_idNew
+
                 post.fromId = fromIdNew
                 post.createdBy = createdByNew
-                // post.date = dateNew
                 post.text = textNew
                 post.replyOwnerId = replyOwnerIdNew
                 post.replyPostId = replyPostIdNew
@@ -75,9 +72,10 @@ object WallService {
                 post.isFavorite = isFavoriteNew
                 post.donut = donutNew
                 post.postponedId = postponedIdNew
+                return true
                 break
-                update = true
-            } else update = false
-        };return update
+            }
+        }
+        return false
     }
 }
