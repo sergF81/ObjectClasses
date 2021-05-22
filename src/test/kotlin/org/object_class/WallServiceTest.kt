@@ -16,7 +16,7 @@ class WallServiceTest {
     fun updateTrue() {
         WallService.add(Post())
         WallService.add(Post())
-        val post = Post(id = 100)
+        val post = Post(id = 1)
         val result = WallService.update(post)
         assertTrue(result)
     }
