@@ -1,25 +1,25 @@
 package org.object_class
 
 fun main() {
-    val post = Post(0)
-    var origin1 = Post(
+
+    val origin1 = Post(
         ownerId = 1,
         date = 1621668732,
         text = " руто"
     )
-    var origin2 = Post(
+    val origin2 = Post(
         ownerId = 2,
         date = 1621668734,
         text = "∆есть"
     )
-    var origin3 = Post(
+    val origin3 = Post(
         2,
         ownerId = 5,
         date = 1621668740,
         text = "”ау, прикольно!!!"
     )
 
-    WallService.add(post)
+
     WallService.add(origin1)
     WallService.add(origin2)
     WallService.update(origin3)

@@ -5,6 +5,7 @@ import org.junit.Test
 
 class WallServiceTest {
 
+
     @Test
     fun addNotZero() {
         val post = Post(0)
@@ -31,3 +32,4 @@ class WallServiceTest {
     }
 
 }
+

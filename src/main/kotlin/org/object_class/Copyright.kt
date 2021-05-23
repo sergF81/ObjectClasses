@@ -1,8 +1,8 @@
 package org.object_class
 
 data class Copyright(
-    var id: Int = 0,
-    var link: String = "",
-    var name: String = "",
-    var type: String = "",
+    val id: Int = 0,
+    val link: String = "",
+    val name: String = "",
+    val type: String = "",
     )
