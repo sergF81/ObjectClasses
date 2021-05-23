@@ -1,5 +1,7 @@
 package org.object_class
 
+import kotlin.collections.ArrayList
+
 data class Post(
     val id: Int = 0,
     var ownerId: Int = 0,
@@ -16,6 +18,10 @@ data class Post(
     val reposts: Repost = Repost(),
     val views: Views = Views(),
     val postType: String = "комментарий",
+    val postSource: PostSource = PostSource(),
+   // val attachments: ArrayList<Attachments>,
+    val geo: Geo = Geo(),
+    val copyHistory: ArrayList<Post>? = null,
     val signerId: Int = 0,
     val canPin: Boolean = false,
     val canDelete: Boolean = false,
