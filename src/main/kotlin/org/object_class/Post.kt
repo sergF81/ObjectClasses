@@ -19,7 +19,7 @@ data class Post(
     val views: Views = Views(),
     val postType: String = "комментарий",
     val postSource: PostSource = PostSource(),
-   // val attachments: ArrayList<Attachments>,
+    val attachments: Array<Attachments>? = null,
     val geo: Geo = Geo(),
     val copyHistory: ArrayList<Post>? = null,
     val signerId: Int = 0,
