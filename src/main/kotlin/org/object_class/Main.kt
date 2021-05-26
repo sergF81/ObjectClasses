@@ -18,6 +18,7 @@ fun main() {
         date = 1621668740,
         text = "”ау, прикольно!!!"
     )
+    val comment = Comment(3, text = "Suka")
 
 
     WallService.add(origin1)
