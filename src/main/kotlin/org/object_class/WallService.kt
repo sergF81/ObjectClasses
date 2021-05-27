@@ -5,7 +5,7 @@ import java.security.cert.Extension
 
 //создание синглтона - Объект WallService, который внутри себя хранит посты в массиве
 object WallService {
-   // val posts = emptyArray<Post>()
+    // val posts = emptyArray<Post>()
     val posts: ArrayList<Post> = arrayListOf()
     private var comments = emptyArray<Comment>()
 
@@ -16,27 +16,30 @@ object WallService {
         return posts.last()
     }
 
-    fun createComment(comment: Comment) {
-        val id = comment.id
-        for((index,post) in posts.withIndex()){
-            if (post.id == comment.id){
-                comments += Comment()
-            }else  throw PostNotFoundException("Жесть")
+
+    fun createComment(comment: Comment): Boolean {
+        for ((index, post) in posts.withIndex()) {
+            if (posts[index].id == comment.id) {
+                comments += if (comments.isEmpty()) {
+                    comment.copy(id = 1)
+                } else comment.copy(id = comments.last().id + 1)
+                return true
+            }
         }
-        if(!comments.isEmpty())
-        TODO()
+        throw  PostNotFoundException()
     }
 
-    private fun PostNotFoundException(s: String): Throwable {
-        throw RuntimeException()
+   class PostNotFoundException : Throwable("Не найден Post с таким Id") {
+
     }
 
-    fun update (newPost: Post):Boolean{
-          for ((index, post) in posts.withIndex()) {
+
+    fun update(newPost: Post): Boolean {
+        for ((index, post) in posts.withIndex()) {
 
             if (post.id == newPost.id) {
-               newPost.ownerId = post.ownerId
-               newPost.date = post.date
+                newPost.ownerId = post.ownerId
+                newPost.date = post.date
                 posts[index] = newPost
                 return true
             }
@@ -45,3 +48,9 @@ object WallService {
     }
 
 }
+
+
+
+
+
+
