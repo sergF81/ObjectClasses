@@ -40,7 +40,7 @@ class WallServiceTest() {
         val a = WallService()
         a.add(Post())
         a.add(Post())
-        a.createComment(Comment(2, text = "ffff"))
+        a.createComment(Comment(3, text = "ffff"))
     }
 }
 
