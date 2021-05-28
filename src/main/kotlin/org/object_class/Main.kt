@@ -18,16 +18,7 @@ fun main() {
         date = 1621668740,
         text = "Уау, прикольно!!!"
     )
-   // val comment = Comment(3, text = "Suka")
 
-    WallService.add(origin1)
-    WallService.add(origin1)
-    WallService.add(origin2)
-    WallService.update(origin3)
-    println(WallService.posts.toList())
-    val comment1 = Comment(4)
-    WallService.createComment(comment1)
-    println("__________________Вывод содержимого постов____________________")
 
 
 

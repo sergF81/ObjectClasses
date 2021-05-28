@@ -3,9 +3,8 @@ package org.object_class
 import java.lang.RuntimeException
 import java.security.cert.Extension
 
-//создание синглтона - Объект WallService, который внутри себя хранит посты в массиве
-object WallService {
-    // val posts = emptyArray<Post>()
+//СЃРѕР·РґР°РЅРёРµ СЃРёРЅРіР»С‚РѕРЅР° - РћР±СЉРµРєС‚ WallService, РєРѕС‚РѕСЂС‹Р№ РІРЅСѓС‚СЂРё СЃРµР±СЏ С…СЂР°РЅРёС‚ РїРѕСЃС‚С‹ РІ РјР°СЃСЃРёРІРµ
+class WallService {
     val posts: ArrayList<Post> = arrayListOf()
     private var comments = emptyArray<Comment>()
 
@@ -28,7 +27,7 @@ object WallService {
         }
         throw  PostNotFoundException()
     }
-    class PostNotFoundException : Exception("Не найден Post с таким Id") {
+    class PostNotFoundException : Exception("РќРµ РЅР°Р№РґРµРЅ Post СЃ С‚Р°РєРёРј Id") {
     }
 
 
