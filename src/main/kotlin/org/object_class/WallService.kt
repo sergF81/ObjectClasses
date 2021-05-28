@@ -28,9 +28,7 @@ object WallService {
         }
         throw  PostNotFoundException()
     }
-
-   class PostNotFoundException : Throwable("Не найден Post с таким Id") {
-
+    class PostNotFoundException : Exception("Не найден Post с таким Id") {
     }
 
 

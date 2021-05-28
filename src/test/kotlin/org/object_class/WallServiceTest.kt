@@ -2,6 +2,8 @@ package org.object_class
 
 import org.junit.Assert.*
 import org.junit.Test
+import org.object_class.WallService.PostNotFoundException
+
 
 class WallServiceTest {
 
@@ -23,21 +25,18 @@ class WallServiceTest {
     }
 
     @Test
-    fun updateFalse() {
+    fun createComment() {
         WallService.add(Post())
         WallService.add(Post())
-        val post = Post(10)
-        val result = WallService.update(post)
-        assertFalse(result)
+        WallService.createComment(Comment(1, text = "Проверка добавления"))
     }
 
     @Test(expected = PostNotFoundException::class)
     fun shouldThrow() {
-        val comment1 = Comment(2)
-        WallService.createComment(comment1)
+        WallService.add(Post())
+        WallService.add(Post())
+        WallService.createComment(Comment(3, text = "ffff"))
     }
-
-
 }
 
 

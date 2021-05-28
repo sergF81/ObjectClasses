@@ -25,7 +25,7 @@ fun main() {
     WallService.add(origin2)
     WallService.update(origin3)
     println(WallService.posts.toList())
-    val comment1 = Comment(3)
+    val comment1 = Comment(4)
     WallService.createComment(comment1)
     println("__________________Вывод содержимого постов____________________")
 
