@@ -5,8 +5,8 @@ import java.security.cert.Extension
 
 //создание синглтона - Объект WallService, который внутри себя хранит посты в массиве
 class WallService {
-    val posts: ArrayList<Post> = arrayListOf()
-    private var comments = emptyArray<Comment>()
+    private val posts: ArrayList<Post> = arrayListOf()
+    private val comments: ArrayList<Comment> = arrayListOf()
 
     fun add(post: Post): Post {
         val postNew = if (posts.isEmpty()) post.copy(id = 1)
@@ -27,8 +27,7 @@ class WallService {
         }
         throw  PostNotFoundException()
     }
-    class PostNotFoundException : Exception("Не найден Post с таким Id") {
-    }
+
 
 
     fun update(newPost: Post): Boolean {
