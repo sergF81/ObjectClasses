@@ -7,13 +7,12 @@ import org.object_class.PostNotFoundException
 
 class WallServiceTest() {
 
- //   @Test
- //   fun addNotZero() {
- //       val a = WallService()
- //       val post = Post(0)
- //       a.add(post)
- //       assertNotEquals(0, a.posts.last().id)
- //   }
+    @Test
+    fun add() {
+        val a = WallService()
+        val result = a.add(Post(text = "проверка"))
+        assertEquals(1, result.id)
+    }
 
     @Test
     fun updateTrue() {
